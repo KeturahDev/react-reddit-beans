@@ -1,68 +1,89 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reddit-Beans
+## By: Keturah Howard, Alyssa Colistro, Todd Walraven, Mariam Alaeddin || April 28th 2020
+#### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Component Tree
 
-In the project directory, you can run:
+<img width="684" alt="post" src="https://user-images.githubusercontent.com/58479140/80538850-415f1100-895b-11ea-8f6e-375d768697d2.png">
 
-### `npm start`
+## Description 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Mock reddit site to practice redux store information.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## Preview
+***[Deployed Application](https://keturahdev.github.io/reddit-beans/)***
+<img width="1315" alt="Screen Shot 2020-04-24 at 8 32 25 PM" src="https://user-images.githubusercontent.com/32975967/80270189-dbc50900-866a-11ea-98c3-f5db8ae17d94.png">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*component diagram*
+<img width="815" alt="Screen Shot 2020-04-24 at 9 48 04 AM" src="https://user-images.githubusercontent.com/32975967/80236977-cae7a980-8610-11ea-8eff-2098cb79edc7.png">
 
-### `npm run build`
+## Project Specifications
+### User Stories
+* As a user, I want to enter content into a form and submit to create a new post.
+* As a user, I want my new posts to include a timestamp. And I want to see when other listings were posted, too.
+* As a user, I want to upvote posts I particularly enjoy.
+* As a user, I want to downvote posts I don't like, or find inappropriate.
+* As a user, I'd like posts with the most upvotes to appear higher on the page. (We haven't explicitly covered this in our curriculum, but here's a hint: You can complete logic before the return statement of a mapStateToProps() method!)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Stretch goal:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* As a user, I want to click a post to view additional details. For now simply hide/show some message content. (Hint: You could create a currentlySelectedPost Redux state key, and alter the value based on which post the user is selecting.)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Behavior Driven Development
 
-### `npm run eject`
+|Behavior|Input|Output|
+|---|:---:|:---:|
+|display all bean-bowls|-|*list of bean-bowls*|
+|display bean-bowl details|user clicks bean-bowl|*page appears with all bean-bowl details*|
+|user can add new bean-bowl to list|user clicks add bean-bowl|*form for creating bean-bowl appears*|
+|user can navigate back to menu |user clicks on button on details page|*menu reappears*|
+|user can upvote a bean-bowl |user clicks upvote button on bean-bowl|*upvote of bean-bowl increases by 1 and bean-bowls will be reordered if necessary based on number of upvotes per bean-bowl*|
+|user can downvote a bean-bowl |user clicks downvote button on a bean-bowl|*a loses a vote and bean-bowl list is reordered to reflect bean-bowls by number of votes*|
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup/Installation Requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+_In Terminal:_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Navigate to where you want this application to be saved, i.e.:
+```cd desktop```
+* Clone the file from GitHub with HTTPS
+```git clone https://github.com/KeturahDev/reddit-beans```
+* Open file in your preferred text editor
+* On Mac: ```open -a {your text editor} reddit-beans```
+* On Windows: ```reddit-beans```
 
-## Learn More
+_Download Manually:_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Navigate to https://github.com/KeturahDev/reddit-beans.
+* Click green "Clone or Download" button.
+* Click "Download ZIP".
+* Click downloaded file to unzip.
+* Navigate to folder called "reddit-beans-store" in terminal.
+* Run "npm start" to auto start a local instance in your browser at http://localhost:3000/.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Known Bugs
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+_No known bugs at this time._
 
-### Analyzing the Bundle Size
+## Support and contact details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/KeturahDev/reddit-beans/issues) here on GitHub._
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* React
+* npm
+* Webpack
+* Javascript
+* HTML & CSS
+* Bootstrap 4
+* React-Redux
 
-### Advanced Configuration
+### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright (c) 2020 *Keturah Howard, Alyssa Colistro, Todd Walraven, Mariam Alaeddin*
