@@ -6,23 +6,23 @@ function BeanBowlList(props){
   return(
     <React.Fragment>
       <hr/>
-    {Object.values(props.BeanBowlList).map((beanbowl) =>
+    {Object.values(props.list).map((beanBowl) =>
       <BeanBowl
         whenBeanBowlClicked = { props.onBeanBowlSelection }
-        title={beanbowl.title}
-        author={beanbowl.author}
-        content={beanbowl.content}
-        timestamp={beanbowl.timestamp}
-        amountOfBeans={beanbowl.amountOfBeans}
-        id={beanbowl.id}
-        key={beanbowl.id}/>
+        title={beanBowl.title}
+        author={beanBowl.author}
+        content={beanBowl.content}
+        timestamp={beanBowl.timestamp}
+        amountOfBeans={beanBowl.amountOfBeans}
+        id={beanBowl.id}
+        key={beanBowl.id}/>
     )}
     </React.Fragment>
   );
 }
 
 BeanBowlList.propTypes = {
-  beanBowlList: PropTypes.object,
+  list: PropTypes.object,
   onBeanBowlSelection: PropTypes.func
 }
 

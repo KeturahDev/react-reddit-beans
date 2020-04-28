@@ -84,6 +84,10 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 
 ### License
 
+Co-authored-by: Mariam <maralaeddin@gmail.com>
+Co-authored-by: Todd Walraven <cod4247@yahoo.com>
+Co-authored-by: acolistro <arcolistro@gmail.com>
+
 [MIT](https://choosealicense.com/licenses/mit/)
 
 Copyright (c) 2020 *Keturah Howard, Alyssa Colistro, Todd Walraven, Mariam Alaeddin*

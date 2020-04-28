@@ -1,4 +1,10 @@
 import React from 'react';
+import BeanBowlDetail from "./BeanBowlDetail";
+import BeanBowlForm from "./BeanBowlForm";
+import BeanBowlList from "./BeanBowlList";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
+
 
 class BeanBowlController extends React.Component{
   constructor(props){
@@ -6,11 +12,10 @@ class BeanBowlController extends React.Component{
     this.state = {
       formVisible: false,
       selectedBeanBowl: null,
-      //beanbowlData - from redux store
     }
   }
   handleClick = () => {
-    if (selectedBeanBowl !== null) {
+    if (this.state.selectedBeanBowl !== null) {
       this.setState({
         formVisible: false,
         selectedBeanBowl: null
@@ -21,28 +26,50 @@ class BeanBowlController extends React.Component{
       }));
     }
   }
+  
+  handleAddingBeanBowl = (beanBowl) => {
+    const {dispatch} = this.props
+    const {title, author, content, timeStamp, amountOfBeans ,id} = beanBowl
+    const action = {
+      type: "ADD_BEAN_BOWL",
+      title: title,
+      author: author,
+      content: content,
+      timeStamp: timeStamp,
+      amountOfBeans: amountOfBeans,
+      id: id
+    }
+    dispatch(action)
+    this.setState({ formVisible: false })
+  }
+
+  handleSelectedBeanBowl = (id) => {
+    const selectedBeanBowl = this.props.masterBeanBowl[id];
+    this.setState({selectedBeanBowl: selectedBeanBowl});
+    console.log(selectedBeanBowl)
+  }
 
   currentlyVisible = () => {
-    if(selectedPost !== null){
+    if(this.state.selectedBeanBowl !== null){
       return {
-        component: <BeanBowl selectedBeanBowl={this.state.selectedBeanBowl}/>,
+        component: <BeanBowlDetail selectedBeanBowl={this.state.selectedBeanBowl}/>,
         buttontext: "Back to bean bowls"
       }
-    } else if (formVisible === true) {
+    } else if (this.state.formVisible === true) {
       return{
       component: <BeanBowlForm addingBeanBowl={this.handleAddingBeanBowl}/>,
       buttontext: "Back to bean bowls"
       }
     } else {
       return {
-      component = <BeanBowlList list={this.props.masterBeanBowl} />,
-      buttontext = "Add bean bowl"
+      component: <BeanBowlList list={this.props.masterBeanBowl} onBeanBowlSelection={this.handleSelectedBeanBowl} />,
+      buttontext: "Add bean bowl"
       }
     }
   }
 
   render(){
-    currentView = currentlyVisible()
+    const currentView = this.currentlyVisible()
     return(
       <React.Fragment>
         {currentView.component}
@@ -51,5 +78,10 @@ class BeanBowlController extends React.Component{
     );
   }
 }
-
+const mapStateToProps = state => {
+  return {
+    masterBeanBowl : state
+  }
+}
+BeanBowlController = connect(mapStateToProps)(BeanBowlController)
 export default BeanBowlController;
